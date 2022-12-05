@@ -1,13 +1,19 @@
-import greeting from '../index.js';
+import { engine, getRandomArbitrary } from '../index.js';
 
-const even = () => {
-  const str = 'Answer "yes" if the number is even, otherwise answer "no".';
-  const x = Math.floor(Math.random() * 100);
-  const y = Math.floor(Math.random() * 100);
-  const z = Math.floor(Math.random() * 100);
-  const randomN = [x, y, z];
-  const condition = [randomN[0] % 2 === 0, randomN[1] % 2 === 0, randomN[2] % 2 === 0];
-  greeting(str, randomN, condition, 'yes', 'no');
+const task = 'Answer "yes" if the number is even, otherwise answer "no".';
+const getCorrectAnswer = (randomNum) => {
+  if (randomNum % 2 === 0) {
+    return 'yes';
+  }
+  return 'no';
 };
+const rules = () => {
+  const minNumber = 1;
+  const maxNumber = 100;
+  const randomNumber = getRandomArbitrary(minNumber, maxNumber);
+  const CorrectAnswer = getCorrectAnswer(randomNumber);
+  return [randomNumber, CorrectAnswer];
+};
+const even = () => engine(task, rules);
 
 export default even;
