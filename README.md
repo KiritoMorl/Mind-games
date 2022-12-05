@@ -3,6 +3,8 @@
 <a href="https://asciinema.org/a/Of3CQfstH1sEdtbMJp5toEszy" target="_blank"><img src="https://asciinema.org/a/Of3CQfstH1sEdtbMJp5toEszy.svg" /></a>
  Калькулятор:
 <a href="https://asciinema.org/a/etg6WSuJ18ohEuhJ4w0HMGbTJ" target="_blank"><img src="https://asciinema.org/a/etg6WSuJ18ohEuhJ4w0HMGbTJ.svg" /></a>
+НОД (наибольший общий делитель):
+<a href="https://asciinema.org/a/7ZB4wH6QhllPr8IV5T9M3bYgG" target="_blank"><img src="https://asciinema.org/a/7ZB4wH6QhllPr8IV5T9M3bYgG.svg" /></a>
 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/KiritoMorl/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/KiritoMorl/frontend-project-44/actions)
