@@ -1,20 +1,17 @@
 import readlineSync from 'readline-sync';
 
-const greeting = (str, question, condition, correctAnswer1, correctAnswer2) => {
+export function getRandomArbitrary(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+}
+export const engine = (task, rules) => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
-  console.log(str);
-  let correctAnswer = '';
+  console.log(task);
   for (let i = 0; i < 3; i += 1) {
-    const random = question[i];
-    console.log(`Question: ${random}`);
+    const [question, correctAnswer] = rules() ;
+    console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
-    if (condition[i]) {
-      correctAnswer = correctAnswer1;
-    } else {
-      correctAnswer = correctAnswer2;
-    }
     if (correctAnswer === userAnswer) {
       console.log('Correct!');
     } else {
@@ -27,4 +24,3 @@ const greeting = (str, question, condition, correctAnswer1, correctAnswer2) => {
     }
   }
 };
-export default greeting;
