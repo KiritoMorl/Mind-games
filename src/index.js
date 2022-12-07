@@ -9,7 +9,7 @@ export const engine = (task, rules) => {
   console.log(`Hello, ${userName}!`);
   console.log(task);
   for (let i = 0; i < 3; i += 1) {
-    const [question, correctAnswer] = rules() ;
+    const [question, correctAnswer] = rules();
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
     if (correctAnswer === userAnswer) {
