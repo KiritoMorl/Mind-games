@@ -8,6 +8,9 @@
 НОД (наибольший общий делитель):
 
 <a href="https://asciinema.org/a/7ZB4wH6QhllPr8IV5T9M3bYgG" target="_blank"><img src="https://asciinema.org/a/7ZB4wH6QhllPr8IV5T9M3bYgG.svg" /></a>
+Арифметическая прогрессия:
+
+<a href="https://asciinema.org/a/MmcjJ0hZxiumWDUMAXvDFEjwe" target="_blank"><img src="https://asciinema.org/a/MmcjJ0hZxiumWDUMAXvDFEjwe.svg" /></a>
 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/KiritoMorl/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/KiritoMorl/frontend-project-44/actions)
