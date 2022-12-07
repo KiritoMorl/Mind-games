@@ -11,6 +11,9 @@
 Арифметическая прогрессия:
 
 <a href="https://asciinema.org/a/MmcjJ0hZxiumWDUMAXvDFEjwe" target="_blank"><img src="https://asciinema.org/a/MmcjJ0hZxiumWDUMAXvDFEjwe.svg" /></a>
+Простое ли число?:
+
+<a href="https://asciinema.org/a/x64HqyR1cFysQEr9PALxGbcqn" target="_blank"><img src="https://asciinema.org/a/x64HqyR1cFysQEr9PALxGbcqn.svg" /></a>
 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/KiritoMorl/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/KiritoMorl/frontend-project-44/actions)
