@@ -10,17 +10,22 @@
 Node.js версии 13 и выше.
 
 #### Установка:
+
+1 шаг:
 ```
-    1. git clone
+    git clone
 ```
+2 шаг:
 ```
-    2. cd frontenf-project-44/
+    cd frontenf-project-44/
 ```
+3 шаг:
 ```
-    3. make install
+    make install
 ```
+4 шаг:
 ```
-    4. npm link
+    npm link
 ```
 
 ### Описание:
