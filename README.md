@@ -10,10 +10,18 @@
 Node.js версии 13 и выше.
 
 #### Установка:
-1.    git clone
-2.    cd frontenf-project-44/
-3.    make install
-4.    npm link
+```
+    1. git clone
+```
+```
+    2. cd frontenf-project-44/
+```
+```
+    3. make install
+```
+```
+    4. npm link
+```
 
 ### Описание:
 #### Игра "Проверка на чётность":
