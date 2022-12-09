@@ -1,4 +1,5 @@
-import { engine, getRandomArbitrary } from '../index.js';
+import engine from '../index.js';
+import getRandomArbitrary from '../utils.js';
 
 const getCorrectAnswer = (numberOne, sign, numberTwo) => {
   if (sign === '+') {
@@ -9,8 +10,8 @@ const getCorrectAnswer = (numberOne, sign, numberTwo) => {
   }
   return numberOne * numberTwo;
 };
-const task = 'What is the result of the expression?';
-const rules = () => {
+const rules = 'What is the result of the expression?';
+const generateRound = () => {
   const minNumber = 1;
   const maxNumber = 25;
   const nm1 = getRandomArbitrary(minNumber, maxNumber);
@@ -23,8 +24,8 @@ const rules = () => {
   const correctAnswer = getCorrectAnswer(nm1, randomSign, nm2);
   return [question, String(correctAnswer)];
 };
-const calc = () => {
-  engine(task, rules);
+const runCalcGame = () => {
+  engine(rules, generateRound);
 };
 
-export default calc;
+export default runCalcGame;
