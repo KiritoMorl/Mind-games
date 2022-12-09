@@ -18,7 +18,7 @@ const generateRound = () => {
   const nm2 = getRandomArbitrary(minNumber, maxNumber);
   const signArr = ['+', '-', '*'];
   const minSignIndex = 0;
-  const maxSignIndex = signArr.length;
+  const maxSignIndex = signArr.length - 1;
   const randomSign = signArr[getRandomArbitrary(minSignIndex, maxSignIndex)];
   const question = [`${nm1} ${randomSign} ${nm2}`];
   const correctAnswer = getCorrectAnswer(nm1, randomSign, nm2);
