@@ -1,4 +1,5 @@
-import { engine, getRandomArbitrary } from '../index.js';
+import engine from '../index.js';
+import getRandomArbitrary from '../utils.js';
 
 const getCorrectAnswer = (firstNumber, secondNumber) => {
   const dividersArr = [];
@@ -13,8 +14,8 @@ const getCorrectAnswer = (firstNumber, secondNumber) => {
   const maxDivider = dividersArr.length - 1;
   return dividersArr[maxDivider];
 };
-const task = 'Find the greatest common divisor of given numbers.';
-const rules = () => {
+const rules = 'Find the greatest common divisor of given numbers.';
+const generateRound = () => {
   const minNumber = 1;
   const maxNumber = 100;
   const randomNumber1 = getRandomArbitrary(minNumber, maxNumber);
@@ -23,6 +24,6 @@ const rules = () => {
   const correctAnswer = getCorrectAnswer(randomNumber1, randomNumber2);
   return [question, String(correctAnswer)];
 };
-const gcd = () => engine(task, rules);
+const runGcdGame = () => engine(rules, generateRound);
 
-export default gcd;
+export default runGcdGame;
