@@ -1,6 +1,7 @@
-import { engine, getRandomArbitrary } from '../index.js';
+import engine from '../index.js';
+import getRandomArbitrary from '../utils.js';
 
-const task = 'What number is missing in the progression?';
+const rules = 'What number is missing in the progression?';
 let numbersArr = [];
 const getNumbersArr = (randomN) => {
   const step = getRandomArbitrary(1, 10);
@@ -22,7 +23,7 @@ const getNumber = () => {
   numbersArr[place] = '..';
   return number;
 };
-const rules = () => {
+const generateRound = () => {
   const minNumber = 1;
   const maxNumber = 50;
   const separator = ' ';
@@ -32,6 +33,6 @@ const rules = () => {
   const question = numbersArr.join(separator);
   return [question, String(correctAnswer)];
 };
-const progression = () => engine(task, rules);
+const runProgressionGame = () => engine(rules, generateRound);
 
-export default progression;
+export default runProgressionGame;
