@@ -1,5 +1,7 @@
+import _ from 'lodash';
 import engine from '../index.js';
-import getRandomArbitrary from '../utils.js';
+
+const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const getCorrectAnswer = (randomN) => {
   let correctAnswer = '';
@@ -12,15 +14,14 @@ const getCorrectAnswer = (randomN) => {
   }
   return correctAnswer;
 };
-const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
 const generateRound = () => {
-  const minNumber = 1;
-  const maxNumber = 50;
-  const randomNumber = getRandomArbitrary(minNumber, maxNumber);
+  const randomNumber = _.random(1, 50);
   const correctAnswer = getCorrectAnswer(randomNumber);
   const question = randomNumber;
   return [question, correctAnswer];
 };
+
 const runPrimeGame = () => engine(rules, generateRound);
 
 export default runPrimeGame;
