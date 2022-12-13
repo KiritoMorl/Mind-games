@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "type": "module",
-  "description": "https://github.com/KiritoMorl/frontend-project-44/blob/main/README.md",
+  "description": "Brain games is a set of five console games based on popular mobile brain training apps. Each game asks questions that need to be answered correctly. After three correct answers, you will win. Wrong answers end your game and offer to play it again.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
