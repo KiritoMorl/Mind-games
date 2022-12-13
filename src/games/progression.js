@@ -1,12 +1,14 @@
+import _ from 'lodash';
 import engine from '../index.js';
-import getRandomArbitrary from '../utils.js';
 
 const rules = 'What number is missing in the progression?';
+
 let numbersArr = [];
+
 const getNumbersArr = (randomN) => {
-  const step = getRandomArbitrary(1, 10);
+  const step = _.random(1, 10);
   let number = randomN;
-  const arrLength = getRandomArbitrary(5, 10);
+  const arrLength = _.random(5, 10);
   if (numbersArr.length >= 5) {
     numbersArr = [];
   }
@@ -16,23 +18,24 @@ const getNumbersArr = (randomN) => {
   }
   return numbersArr;
 };
+
 const getNumber = () => {
   const length = numbersArr.length - 1;
-  const place = getRandomArbitrary(0, length);
+  const place = _.random(0, length);
   const number = numbersArr[place];
   numbersArr[place] = '..';
   return number;
 };
+
 const generateRound = () => {
-  const minNumber = 1;
-  const maxNumber = 50;
   const separator = ' ';
-  const randomNumber = getRandomArbitrary(minNumber, maxNumber);
+  const randomNumber = _.random(1, 50);
   getNumbersArr(randomNumber);
-  const correctAnswer = getNumber();
+  const correctAnswer = String(getNumber());
   const question = numbersArr.join(separator);
-  return [question, String(correctAnswer)];
+  return [question, correctAnswer];
 };
+
 const runProgressionGame = () => engine(rules, generateRound);
 
 export default runProgressionGame;
