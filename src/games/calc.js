@@ -1,29 +1,33 @@
+import _ from 'lodash';
 import engine from '../index.js';
-import getRandomArbitrary from '../utils.js';
 
-const getCorrectAnswer = (numberOne, sign, numberTwo) => {
+const rules = 'What is the result of the expression?';
+
+const calculation = (numberOne, sign, numberTwo) => {
   if (sign === '+') {
     return numberOne + numberTwo;
   }
   if (sign === '-') {
     return numberOne - numberTwo;
   }
-  return numberOne * numberTwo;
+  if (sign === '*') {
+    return numberOne * numberTwo;
+  }
+  throw new Error(`Operator ${sign} - doesn't support`);
 };
-const rules = 'What is the result of the expression?';
+
 const generateRound = () => {
-  const minNumber = 1;
-  const maxNumber = 25;
-  const nm1 = getRandomArbitrary(minNumber, maxNumber);
-  const nm2 = getRandomArbitrary(minNumber, maxNumber);
+  const num1 = _.random(0, 10);
+  const num2 = _.random(0, 10);
   const signArr = ['+', '-', '*'];
   const minSignIndex = 0;
   const maxSignIndex = signArr.length - 1;
-  const randomSign = signArr[getRandomArbitrary(minSignIndex, maxSignIndex)];
-  const question = [`${nm1} ${randomSign} ${nm2}`];
-  const correctAnswer = getCorrectAnswer(nm1, randomSign, nm2);
-  return [question, String(correctAnswer)];
+  const randomSign = signArr[_.random(minSignIndex, maxSignIndex)];
+  const question = `${num1} ${randomSign} ${num2}`;
+  const correctAnswer = String(calculation(num1, randomSign, num2));
+  return [question, correctAnswer];
 };
+
 const runCalcGame = () => {
   engine(rules, generateRound);
 };
