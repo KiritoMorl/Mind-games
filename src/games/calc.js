@@ -19,13 +19,11 @@ const calculation = (numberOne, sign, numberTwo) => {
 const generateRound = () => {
   const num1 = _.random(0, 10);
   const num2 = _.random(0, 10);
-  const signArr = ['+', '-', '*'];
-  const minSignIndex = 0;
-  const maxSignIndex = signArr.length - 1;
-  const randomSign = signArr[_.random(minSignIndex, maxSignIndex)];
+  const signs = ['+', '-', '*'];
+  const randomSign = signs[_.random(0, signs.length - 1)];
   const question = `${num1} ${randomSign} ${num2}`;
-  const correctAnswer = String(calculation(num1, randomSign, num2));
-  return [question, correctAnswer];
+  const answer = String(calculation(num1, randomSign, num2));
+  return [question, answer];
 };
 
 const runCalcGame = () => {
