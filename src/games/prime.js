@@ -3,23 +3,20 @@ import engine from '../index.js';
 
 const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const getCorrectAnswer = (randomN) => {
-  let correctAnswer = '';
-  for (let i = 2; i <= randomN; i += 1) {
-    if (randomN % i === 0 && i < randomN) {
-      correctAnswer = 'no';
-      return correctAnswer;
+const isPrime = (randomN) => {
+  for (let i = 2; i <= randomN / 2; i += 1) {
+    if (randomN % i === 0) {
+      return false;
     }
-    correctAnswer = 'yes';
   }
-  return correctAnswer;
+  return true;
 };
 
 const generateRound = () => {
   const randomNumber = _.random(1, 50);
-  const correctAnswer = getCorrectAnswer(randomNumber);
+  const answer = isPrime(randomNumber) ? 'yes' : 'no';
   const question = randomNumber;
-  return [question, correctAnswer];
+  return [question, answer];
 };
 
 const runPrimeGame = () => engine(rules, generateRound);
