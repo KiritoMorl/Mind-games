@@ -3,17 +3,12 @@ import engine from '../index.js';
 
 const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const getCorrectAnswer = (randomNum) => {
-  if (randomNum % 2 === 0) {
-    return 'yes';
-  }
-  return 'no';
-};
+const isEven = (num) => num % 2 === 0;
 
 const generateRound = () => {
   const randomNumber = _.random(1, 100);
-  const CorrectAnswer = getCorrectAnswer(randomNumber);
-  return [randomNumber, CorrectAnswer];
+  const answer = isEven(randomNumber) ? 'yes' : 'no';
+  return [randomNumber, answer];
 };
 
 const runEvenGame = () => engine(rules, generateRound);
