@@ -3,37 +3,31 @@ import engine from '../index.js';
 
 const rules = 'What number is missing in the progression?';
 
-let numbersArr = [];
+let progression = [];
 
-const getNumbersArr = (randomN) => {
-  const step = _.random(1, 10);
+const makeProgression = (randomN, step, progressionLength) => {
   let number = randomN;
-  const arrLength = _.random(5, 10);
-  if (numbersArr.length >= 5) {
-    numbersArr = [];
+  if (progression.length >= 5) {
+    progression = [];
   }
-  for (let i = 0; i < arrLength; i += 1) {
+  for (let i = 0; i < progressionLength; i += 1) {
     number += step;
-    numbersArr.push(number);
+    progression.push(number);
   }
-  return numbersArr;
-};
-
-const getNumber = () => {
-  const length = numbersArr.length - 1;
-  const place = _.random(0, length);
-  const number = numbersArr[place];
-  numbersArr[place] = '..';
-  return number;
+  return progression;
 };
 
 const generateRound = () => {
+  const step = _.random(1, 10);
+  const progressionLength = _.random(5, 10);
   const separator = ' ';
   const randomNumber = _.random(1, 50);
-  getNumbersArr(randomNumber);
-  const correctAnswer = String(getNumber());
-  const question = numbersArr.join(separator);
-  return [question, correctAnswer];
+  makeProgression(randomNumber, step, progressionLength);
+  const place = _.random(0, progression.length - 1);
+  const answer = String(progression[place]);
+  progression[place] = '..';
+  const question = progression.join(separator);
+  return [question, answer];
 };
 
 const runProgressionGame = () => engine(rules, generateRound);
