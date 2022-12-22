@@ -5,7 +5,7 @@ const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (randomN) => {
   for (let i = 2; i <= randomN; i += 1) {
-    if (randomN % i === 0 || randomN === 1) {
+    if (randomN % i === 0) {
       return false;
     }
   }
@@ -13,7 +13,7 @@ const isPrime = (randomN) => {
 };
 
 const generateRound = () => {
-  const randomNumber = random(1, 50);
+  const randomNumber = random(2, 50);
   const answer = isPrime(randomNumber) ? 'yes' : 'no';
   const question = randomNumber;
   return [question, answer];
