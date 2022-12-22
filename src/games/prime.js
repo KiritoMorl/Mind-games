@@ -5,7 +5,7 @@ const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (randomN) => {
   for (let i = 2; i <= randomN; i += 1) {
-    if (randomN % i === 0) {
+    if (randomN % i === 0 || randomN === 1) {
       return false;
     }
   }
