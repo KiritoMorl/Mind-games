@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import random from 'lodash/random.js';
 import engine from '../index.js';
 
 const rules = 'What is the result of the expression?';
@@ -17,10 +17,10 @@ const calculation = (numberOne, sign, numberTwo) => {
 };
 
 const generateRound = () => {
-  const num1 = _.random(0, 10);
-  const num2 = _.random(0, 10);
+  const num1 = random(0, 10);
+  const num2 = random(0, 10);
   const signs = ['+', '-', '*'];
-  const randomSign = signs[_.random(0, signs.length - 1)];
+  const randomSign = signs[random(0, signs.length - 1)];
   const question = `${num1} ${randomSign} ${num2}`;
   const answer = String(calculation(num1, randomSign, num2));
   return [question, answer];
