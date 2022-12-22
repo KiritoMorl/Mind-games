@@ -1,15 +1,11 @@
-import _ from 'lodash';
+import random from 'lodash/random.js';
 import engine from '../index.js';
 
 const rules = 'What number is missing in the progression?';
 
-let progression = [];
-
-const makeProgression = (randomN, step, progressionLength) => {
-  let number = randomN;
-  if (progression.length >= 5) {
-    progression = [];
-  }
+const makeProgression = (randomNumber, step, progressionLength) => {
+  const progression = [randomNumber];
+  let number = randomNumber;
   for (let i = 0; i < progressionLength; i += 1) {
     number += step;
     progression.push(number);
@@ -18,12 +14,12 @@ const makeProgression = (randomN, step, progressionLength) => {
 };
 
 const generateRound = () => {
-  const step = _.random(1, 10);
-  const progressionLength = _.random(5, 10);
+  const step = random(1, 10);
+  const progressionLength = random(5, 10);
   const separator = ' ';
-  const randomNumber = _.random(1, 50);
-  makeProgression(randomNumber, step, progressionLength);
-  const place = _.random(0, progression.length - 1);
+  const randomNumber = random(1, 50);
+  const progression = makeProgression(randomNumber, step, progressionLength);
+  const place = random(0, progression.length - 1);
   const answer = String(progression[place]);
   progression[place] = '..';
   const question = progression.join(separator);
