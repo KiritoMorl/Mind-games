@@ -4,7 +4,7 @@ import engine from '../index.js';
 const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (randomN) => {
-  for (let i = 2; i <= randomN; i += 1) {
+  for (let i = 2; i < randomN; i += 1) {
     if (randomN % i === 0) {
       return false;
     }
