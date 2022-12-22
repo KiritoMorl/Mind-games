@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import random from 'lodash/random.js';
 import engine from '../index.js';
 
 const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
@@ -6,7 +6,7 @@ const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 const isEven = (num) => num % 2 === 0;
 
 const generateRound = () => {
-  const randomNumber = _.random(1, 100);
+  const randomNumber = random(1, 100);
   const answer = isEven(randomNumber) ? 'yes' : 'no';
   return [randomNumber, answer];
 };
