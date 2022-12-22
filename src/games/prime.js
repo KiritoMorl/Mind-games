@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import random from 'lodash/random.js';
 import engine from '../index.js';
 
 const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -13,7 +13,7 @@ const isPrime = (randomN) => {
 };
 
 const generateRound = () => {
-  const randomNumber = _.random(1, 50);
+  const randomNumber = random(1, 50);
   const answer = isPrime(randomNumber) ? 'yes' : 'no';
   const question = randomNumber;
   return [question, answer];
