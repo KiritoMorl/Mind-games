@@ -1,4 +1,4 @@
-Progect "Mind Games"
+Project "Mind Games"
 =====================
 Brain games is a set of five console games based on popular mobile brain training apps. Each game asks questions that need to be answered correctly. After three correct answers, you will win. Wrong answers end your game and offer to play it again.
 
